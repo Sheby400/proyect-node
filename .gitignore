@@ -1,0 +1,19 @@
+#Dependencias
+node_modules/
+
+#Entorno
+.env
+
+#Logs
+*.log
+logs/
+
+#Test
+coverage/
+
+#Build
+dist/
+build/
+
+#service account
+apps/api/secrets
