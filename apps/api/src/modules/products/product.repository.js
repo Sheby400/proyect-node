@@ -24,15 +24,18 @@ function mapProduct(document) {
 }
 
 export async function listProducts({ limit, active }) {
-  let query = productsCollection
-    .orderBy('createdAt', 'desc')
-    .limit(limit)
+  const safeLimit = Number.isInteger(limit) && limit > 0 ? limit : 20
 
-  if (active !== undefined) {
+  let query = productsCollection.limit(safeLimit)
+
+  if (active === undefined) {
+    query = productsCollection
+      .orderBy('createdAt', 'desc')
+      .limit(safeLimit)
+  } else {
     query = productsCollection
       .where('active', '==', active)
-      .orderBy('createdAt', 'desc')
-      .limit(limit)
+      .limit(safeLimit)
   }
 
   const snapshot = await query.get()

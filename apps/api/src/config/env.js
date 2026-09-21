@@ -32,5 +32,10 @@ export const env = Object.freeze({
     LOG_LEVEL: process.env.LOG_LEVEL,
     FIREBASE_PROJECT_ID: firebaseProjectId,
     FIREBASE_CLIENT_EMAIL: firebaseClientEmail,
-    FIREBASE_PRIVATE_KEY: firebasePrivateKey
+    FIREBASE_PRIVATE_KEY: firebasePrivateKey,
+    JWT_ACCESS_SECRET:process.env.JWT_ACCESS_SECRET,
+    JWT_REFRESH_SECRET:process.env.JWT_REFRESH_SECRET,
+    JWT_ACCESS_EXPIRES_IN:process.env.JWT_ACCESS_EXPIRES_IN,
+    JWT_REFRESH_EXPIRES_IN:process.env.JWT_REFRESH_EXPIRES_IN
+
 })
