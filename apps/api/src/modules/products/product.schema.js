@@ -42,7 +42,8 @@ const createProductBody = z.object({
   description: descriptionSchema,
   price: priceSchema,
   stock: stockSchema.default(0),
-  active: activeSchema.default(true)
+  active: activeSchema.default(true),
+  categoryId: z.string().trim().min(1)
 })
 
 const updateProductBody = z
@@ -52,7 +53,8 @@ const updateProductBody = z
     description: z.string().trim().max(1000).optional(),
     price: priceSchema.optional(),
     stock: stockSchema.optional(),
-    active: activeSchema.optional()
+    active: activeSchema.optional(),
+    categoryId: z.string().trim().min(1)
   })
   .refine((value) => Object.keys(value).length > 0, {
     message: 'At least one field must be provided'

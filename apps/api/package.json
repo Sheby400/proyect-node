@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Api del E-Commerce",
   "main": "src/server.js",
-  "private": "true",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
@@ -18,13 +18,22 @@
     "node": ">=24"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "firebase-admin": "^14.3.0",
     "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
     "pino": "^10.3.1",
     "pino-http": "^11.0.0",
-    "zod": "^4.5.4"
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.1",
+    "globals": "^17.11.0",
+    "nodemon": "^3.1.14",
+    "pino-pretty": "^13.1.3"
   }
 }
